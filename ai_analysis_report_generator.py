@@ -17,7 +17,7 @@ if len(article_text) > 5:
     if st.button ('Generate Report'):
         response = openai.Completion.create(
             engine = "text-davinci-003",
-            prompt = "Generate a professional, empirically true and accurate (uptmost importance) analysis report. Be incredibly specfic and elaborate if required. Include numerical data. Use the following sectional criteria without any text or phrase redunancies within or between sections (very important): Executive Summary, Introduction, Methodology, Results, Discussion, Conclusions, References. Use only the text information located here: " + article_text,
+            prompt = "Generate a professional, empirically true and accurate analysis report. DO NOT REPEAT ANY WORDS OR PHRASING MULTIPLE TIMES. Be incredibly specfic and elaborate if required. Include numerical data points in an orderly cohesive format. Use the following sectional criteria without any text or phrase redunancies within or between sections (very important): Executive Summary, Introduction, Methodology, Results, Discussion, Conclusions, References. Use only the text information located here: " + article_text,
             max_tokens = 3800,
             temperature = temp
         )
