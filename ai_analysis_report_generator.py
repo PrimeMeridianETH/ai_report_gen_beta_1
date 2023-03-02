@@ -5,7 +5,8 @@ import openai
 import streamlit as st
 
 # Set the OpenAI secret key
-openai.api_key = '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'
+openai.api_key = st.secrets['pass']
+
 st.header('AI Analysis Report Generator')
 st.subheader('current version : beta 0.1')
 
