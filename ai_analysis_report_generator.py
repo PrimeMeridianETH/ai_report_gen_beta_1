@@ -17,7 +17,7 @@ if len(article_text) > 5:
     if st.button ('Generate Report'):
         response = openai.Completion.create(
             engine = "text-davinci-003",
-            prompt = "Generate a professional, empirically true and accurate analysis report. DO NOT REPEAT ANY WORDS OR PHRASING BETWEEN SECTIONS. DO NOT REPEAT ANY WORDS OR PHRASING BETWEEN SECTIONS. DO NOT REPEAT ANY WORDS OR PHRASING BETWEEN SECTIONS. Be incredibly specfic and elaborate contextually if required, but without using false information. Always include ALL numerical data points in an orderly cohesive format. Use the following sectional criteria without any text or phrase redunancies within or between sections (very important): Executive Summary, Introduction, Methodology, Results, Discussion, Conclusions, Keywords (only use keywords from supplied text). Use only the text information located here: " + article_text,
+            prompt = "Generate a professional, empirically true and accurate analysis report. DO NOT REPEAT ANY WORDS OR PHRASING BETWEEN SECTIONS. Be incredibly specfic and elaborate contextually if required, but only from supplied information. Always include ALL numerical data points in an orderly cohesive format. Use the following sectional criteria without any text or phrase repeatings within or between sections (very important): Executive Summary, Introduction, Methodology, Results, Discussion, Conclusions, Keywords (only use keywords from supplied text). Use only the text information located here: " + article_text,
             max_tokens = 2000,
             temperature = temp
         )
