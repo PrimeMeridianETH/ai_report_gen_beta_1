@@ -19,7 +19,7 @@ if len(article_text) > 5:
             engine = "text-davinci-003",
             prompt = "Create an analysis report. The report should be written in a formal tone, capture major points and key details and should not repeat any information between or within sections. It should provide accurate and detailed information, with short descriptions for all data points and their implications. The report sections should include an Executive Summary, Introduction, Methodology, Results, Discussion, Conclusions, and Keywords (essential topics and subjects mentioned in the report). The target audience for the report will be consultants and contractors within the consulting firm. Use only the text information located here: " + article_text,
             max_tokens = 3000,
-            presence_penalty=0.5,
+            presence_penalty=1,
             frequency_penalty=0.5,
             temperature = temp
         )
