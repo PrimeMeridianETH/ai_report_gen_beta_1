@@ -17,8 +17,9 @@ if len(article_text) > 5:
     if st.button ('Generate Report'):
         response = openai.Completion.create(
             engine = "text-davinci-003",
-            prompt = "Generate as a professional senior consultant, an empirically true and accurate analysis report. Do not repeat yourself anywhere throughout the resposne. Be incredibly specfic and elaborate contextually if required, but only from supplied information. Always include ALL numerical data points in an orderly cohesive format. Use the following sectional criteria without any text or phrase repeatings within or between sections (very important): Executive Summary, Introduction, Methodology, Results, Discussion, Conclusions, Keywords (only use keywords from supplied text). Use only the text information located here: " + article_text,
+            prompt = "Create an analysis report for a consulting firm that provides various services, which may include business, technology, services, DEI, PR, and marketing. The report should be written in a formal tone and should not repeat any information between or within sections. It should provide accurate and detailed information, with short descriptions for all data points and their implications. The report sections should include an Executive Summary, Introduction, Methodology, Results, Discussion, Conclusions, and Keywords (essential topics and subjects mentioned in the report). The target audience for the report will be consultants and contractors within the consulting firm. Use only the text information located here: " + article_text,
             max_tokens = 2000,
+            presence_penalty=0.5,
             temperature = temp
         )
         res = response["choices"][0]["text"]
